@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love in the Air 💗</title>
+
+  <!-- Hand tracking library -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <link rel="stylesheet" href="style.css">
+  
+
+</head>
+
+<body>
+  <header>
+    <h2>♥ Love in the Air</h2>
+    <span>A little magic, made by you two ✨</span>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">A DIGITAL LOVE GARDEN</p>
+      <h1>Draw what your heart <em>feels.</em> 💗</h1>
+      <p>Move your hand through the air and watch your love bloom into flowers and hearts.</p>
+
+      <div class="names">
+        <input id="nameOne" placeholder="Your name" maxlength="35">
+        <span>♡</span>
+        <input id="nameTwo" placeholder="Your partner's name" maxlength="35">
+      </div>
+    </section>
+
+    <section class="studio">
+      <div class="status">
+        <span id="status">Camera is off</span>
+        <span id="coupleNames">You ♡ Me</span>
+      </div>
+
+      <div class="stage" id="stage">
+        <video id="camera" autoplay playsinline muted></video>
+        <canvas id="canvas"></canvas>
+
+        <div class="welcome" id="welcome">
+          <div class="big-heart">♡</div>
+          <h2>Your love garden is waiting</h2>
+          <p>Raise your index finger and draw your love in the air.</p>
+          <button id="startBtn">Start our love garden 💕</button>
+          <small>Your camera is processed in your browser for hand tracking.</small>
+        </div>
+
+        <div class="hint" id="hint">☝️ Raise your index finger to draw</div>
+      </div>
+
+      <div class="controls">
+        <label>
+          Drawing style
+          <select id="style">
+            <option value="garden">Garden of Love 🌸</option>
+            <option value="rose">Romantic Rose 🌹</option>
+            <option value="rainbow">Rainbow Love 🌈</option>
+            <option value="violet">Violet Dream 💜</option>
+            <option value="galaxy">Heart Galaxy ✨</option>
+            <option value="butterfly">Butterfly Love 🦋</option>
+          </select>
+        </label>
+
+        <label>
+          Flower density
+          <input id="intensity" type="range" min="25" max="100" value="85">
+        </label>
+
+        <label>
+          Choose your love song
+          <input id="songFile" type="file" accept="audio/*">
+        </label>
+      </div>
+
+      <audio id="song" loop></audio>
+
+      <div class="buttons">
+        <button id="musicBtn">♫ Enable music</button>
+        <button id="pauseBtn" disabled>Ⅱ Pause drawing</button>
+
+        <button id="undoBtn" type="button">↶ Undo</button>
+        <button id="clearBtn" type="button">🗑 Clear Canvas</button>
+
+        <button id="saveBtn">Save artwork ↓</button>
+        <button id="recordBtn">● Start recording</button>
+        <button id="stopRecordBtn" disabled>■ Stop & save video</button>
+        <button id="stopBtn" disabled>Camera off</button>
+      </div>
+
+      <p id="recordStatus" class="privacy">Video is saved on your device when you stop recording.</p>
+      <p class="privacy">🔒 This page does not upload your camera video to a server. The selected song stays in your
+        browser.</p>
+    </section>
+
+    <section class="gestures">
+      <p class="eyebrow">A FEW LITTLE GESTURES</p>
+      <h2>Let your hands say it.</h2>
+
+      <div class="cards">
+        <article>
+          <div>☝️</div>
+          <h3>Draw in the air</h3>
+          <p>Raise your index finger. The flower trail follows its movement, even if your other fingers move.</p>
+        </article>
+        <article>
+          <div>✊</div>
+          <h3>Close your hand</h3>
+          <p>Make a fist to pause drawing and music. Raise your index finger again to resume.</p>
+        </article>
+        <article>
+          <div>🖐️</div>
+          <h3>Open your hand</h3>
+          <p>Your open hand won't automatically stop the drawing. Move your index finger to continue.</p>
+        </article>
+      </div>
+
+      <p class="fallback">Camera unavailable? You can draw with your mouse or finger on the canvas.</p>
+    </section>
+  </main>
+
+  <footer>Made with love, for the little things that mean everything. ♡</footer>
+  
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

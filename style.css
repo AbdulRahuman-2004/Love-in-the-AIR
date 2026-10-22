@@ -1,0 +1,361 @@
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --pink: #f3bad8;
+      --purple: #d7c0ff;
+      --text: #49334f;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at top left, #fbe2f0, transparent 45%),
+        radial-gradient(ellipse at bottom right, #e1f5e4, transparent 40%),
+        #fcf7ff;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: auto;
+      padding: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    header h2 {
+      margin: 0;
+      font-family: Georgia, serif;
+    }
+
+    header span,
+    .muted {
+      color: #987f9c;
+      font-size: 13px;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 15px 22px 50px;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 35px 0;
+    }
+
+    .eyebrow {
+      color: #b17ba2;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.1;
+      margin: 18px 0;
+    }
+
+    h1 em {
+      color: #c18cc7;
+    }
+
+    .intro>p:not(.eyebrow) {
+      max-width: 540px;
+      margin: 0 auto 25px;
+      color: #88768e;
+      line-height: 1.7;
+    }
+
+    .names {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .names input {
+      width: 175px;
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid #e9d9ec;
+      border-radius: 12px;
+      background: white;
+      outline: none;
+    }
+
+    .names span {
+      color: #d98ab9;
+      font-size: 24px;
+    }
+
+    .studio {
+      padding: 15px;
+      background: #ffffffcc;
+      border: 1px solid #f0e3f1;
+      border-radius: 22px;
+      box-shadow: 0 18px 55px #8f6a9a15;
+    }
+
+    .status {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 5px 5px 15px;
+      color: #8b7892;
+      font-size: 12px;
+    }
+
+    .stage {
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at 20% 20%, #59436d, transparent 45%),
+        radial-gradient(circle at 80% 80%, #36564c, transparent 40%),
+        #241a30;
+    }
+
+    #camera {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      transform: scaleX(-1);
+      opacity: 0;
+    }
+
+    #canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      touch-action: none;
+    }
+
+    .welcome {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: white;
+      background: #241a3020;
+    }
+
+    .welcome.hidden {
+      display: none;
+    }
+
+    .big-heart {
+      font-size: 60px;
+      color: #f6b9da;
+      animation: heartbeat 2s infinite;
+    }
+
+    .welcome h2 {
+      font-family: Georgia, serif;
+      font-size: 26px;
+    }
+
+    .welcome p {
+      color: #e3d6e9;
+      line-height: 1.6;
+    }
+
+    .welcome small {
+      margin-top: 15px;
+      color: #cdbdd5;
+    }
+
+    button {
+      cursor: pointer;
+      border: 0;
+      border-radius: 25px;
+      padding: 12px 17px;
+      background: linear-gradient(110deg, var(--pink), var(--purple));
+      color: var(--text);
+      font-weight: bold;
+    }
+
+    button:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+
+    .hint {
+      position: absolute;
+      z-index: 1;
+      bottom: 14px;
+      left: 14px;
+      padding: 10px 13px;
+      border-radius: 20px;
+      background: #21162d99;
+      border: 1px solid #ffffff30;
+      color: white;
+      font-size: 12px;
+      pointer-events: none;
+    }
+
+    .controls {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 18px 5px 12px;
+    }
+
+    .controls label {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      font-size: 12px;
+      color: #8b7892;
+    }
+
+    select,
+    input[type="file"] {
+      max-width: 100%;
+      padding: 10px;
+      border: 1px solid #e9d9ec;
+      border-radius: 10px;
+      background: white;
+      color: var(--text);
+    }
+
+    input[type="range"] {
+      width: 190px;
+      accent-color: #bc85c8;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .buttons button {
+      background: white;
+      border: 1px solid #eaddec;
+      font-size: 12px;
+    }
+
+    .buttons button:hover {
+      background: #f7edf9;
+    }
+
+    .recording {
+      color: #b42355 !important;
+      font-weight: bold;
+    }
+
+    .privacy,
+    .fallback {
+      color: #98889d;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.6;
+      margin: 18px 0 5px;
+    }
+
+    .gestures {
+      padding: 65px 0 20px;
+      text-align: center;
+    }
+
+    .gestures h2 {
+      font: bold 36px Georgia, serif;
+      margin-bottom: 25px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      text-align: left;
+    }
+
+    .cards article {
+      padding: 20px;
+      border: 1px solid #f0e4f0;
+      border-radius: 16px;
+      background: #ffffffb8;
+    }
+
+    .cards article div {
+      font-size: 30px;
+    }
+
+    .cards h3 {
+      font-size: 14px;
+    }
+
+    .cards p {
+      color: #8b7c91;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #98889d;
+      border-top: 1px solid #f0e5f1;
+      font-size: 12px;
+    }
+
+    @keyframes heartbeat {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.12);
+      }
+    }
+
+    @media (max-width: 700px) {
+      header span {
+        display: none;
+      }
+
+      main {
+        padding: 10px 12px 35px;
+      }
+
+      .stage {
+        height: 420px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .names input {
+        width: 40%;
+      }
+
+      .controls {
+        gap: 14px;
+      }
+
+      .buttons button {
+        flex: 1 1 40%;
+      }
+    }
